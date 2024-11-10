@@ -61,6 +61,12 @@ def generate_launch_description():
         LaunchConfiguration('model')  # Replace with your URDF or Xacro file
     ])
 
+    gz_bridge_params_path = os.path.join(
+        get_package_share_directory('bme_ros2_navigation'),
+        'config',
+        'gz_bridge.yaml'
+    )
+
     world_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_bme_ros2_navigation, 'launch', 'world.py'),
@@ -101,22 +107,8 @@ def generate_launch_description():
         package="ros_gz_bridge",
         executable="parameter_bridge",
         arguments=[
-            "/clock@rosgraph_msgs/msg/Clock[gz.msgs.Clock",
-            "/cmd_vel@geometry_msgs/msg/Twist@gz.msgs.Twist",
-            "/odom@nav_msgs/msg/Odometry@gz.msgs.Odometry",
-            "/joint_states@sensor_msgs/msg/JointState@gz.msgs.Model",
-            #"/tf@tf2_msgs/msg/TFMessage@gz.msgs.Pose_V",
-            #"/camera@sensor_msgs/msg/Image@gz.msgs.Image",
-            "/camera/camera_info@sensor_msgs/msg/CameraInfo@gz.msgs.CameraInfo",
-            "scan@sensor_msgs/msg/LaserScan@gz.msgs.LaserScan",
-            "/scan/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
-            "imu@sensor_msgs/msg/Imu@gz.msgs.IMU",
-            "/navsat@sensor_msgs/msg/NavSatFix@gz.msgs.NavSat",
-            "/camera/depth_image@sensor_msgs/msg/Image@gz.msgs.Image",
-            "/camera/points@sensor_msgs/msg/PointCloud2@gz.msgs.PointCloudPacked",
-        ],
-        remappings=[
-            #("camera_info", "camera_depth/camera_info"),
+            '--ros-args', '-p',
+            f'config_file:={gz_bridge_params_path}'
         ],
         output="screen",
         parameters=[
