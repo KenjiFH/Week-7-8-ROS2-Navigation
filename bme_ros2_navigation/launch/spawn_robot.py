@@ -67,6 +67,13 @@ def generate_launch_description():
         'gz_bridge.yaml'
     )
 
+    # Generate path to config file
+    interactive_marker_config_file_path = os.path.join(
+        get_package_share_directory('interactive_marker_twist_server'),
+        'config',
+        'linear.yaml'
+    )
+
     world_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_bme_ros2_navigation, 'launch', 'world.py'),
@@ -182,6 +189,14 @@ def generate_launch_description():
              ]
     )
 
+    interactive_marker_twist_server_node = Node(
+        package='interactive_marker_twist_server',
+        executable='marker_server',
+        name='twist_server_node',
+        parameters=[interactive_marker_config_file_path],
+        output='screen',
+    )
+
     launchDescriptionObject = LaunchDescription()
 
     launchDescriptionObject.add_action(rviz_launch_arg)
@@ -202,5 +217,6 @@ def generate_launch_description():
     launchDescriptionObject.add_action(trajectory_node)
     launchDescriptionObject.add_action(trajectory_filtered_node)
     launchDescriptionObject.add_action(ekf_node)
+    launchDescriptionObject.add_action(interactive_marker_twist_server_node)
 
     return launchDescriptionObject
