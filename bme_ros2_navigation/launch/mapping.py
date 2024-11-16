@@ -49,12 +49,6 @@ def generate_launch_description():
         'slam_toolbox_mapping.yaml'
     )
 
-    map_file = os.path.join(
-        get_package_share_directory('bme_ros2_navigation'),
-        'maps',
-        'my_map.yaml'
-    )
-
     # Launch rviz
     rviz_node = Node(
         package='rviz2',

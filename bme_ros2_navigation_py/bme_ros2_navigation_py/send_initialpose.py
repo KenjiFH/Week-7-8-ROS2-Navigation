@@ -19,12 +19,12 @@ class InitialPosePublisher(Node):
 
         # Hardcoded covariance matrix
         covariance_matrix = [
-            9.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-            0.0, 9.0, 0.0, 0.0, 0.0, 0.0,
+            3.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+            0.0, 3.0, 0.0, 0.0, 0.0, 0.0,
             0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
             0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
             0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-            0.0, 0.0, 0.0, 0.0, 0.0, 9.0
+            0.0, 0.0, 0.0, 0.0, 0.0, 3.0
         ]
 
         # Create a publisher for the /initialpose topic
