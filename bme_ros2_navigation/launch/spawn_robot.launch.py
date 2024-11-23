@@ -88,7 +88,7 @@ def generate_launch_description():
 
     world_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
-            os.path.join(pkg_bme_ros2_navigation, 'launch', 'world.py'),
+            os.path.join(pkg_bme_ros2_navigation, 'launch', 'world.launch.py'),
         ),
         launch_arguments={
         'world': LaunchConfiguration('world'),
