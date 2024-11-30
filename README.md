@@ -17,3 +17,6 @@ ros2 run nav2_map_server map_saver_cli -f my_map
 Localization:
 sudo apt install ros-jazzy-nav2-bringup 
 
+Exploration:
+
+ros2 launch explore_lite explore.launch.py
