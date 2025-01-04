@@ -136,7 +136,7 @@ Visualization Manager:
         Filter size: 10
         History Policy: Keep Last
         Reliability Policy: Reliable
-        Value: /trajectory_filtered
+        Value: /trajectory
       Value: true
     - Class: rviz_default_plugins/Camera
       Enabled: false
@@ -152,11 +152,11 @@ Visualization Manager:
         Value: /camera/image/compressed
       Value: false
       Visibility:
-        "": true
         Grid: true
         Imu: true
         InteractiveMarkers: true
         LaserScan: true
+        Map: true
         Odometry filtered: true
         RobotModel: true
         Value: true

@@ -180,14 +180,7 @@ def generate_launch_description():
         package='mogi_trajectory_server',
         executable='mogi_trajectory_server',
         name='mogi_trajectory_server',
-    )
-
-    trajectory_filtered_node = Node(
-        package='mogi_trajectory_server',
-        executable='mogi_trajectory_server',
-        name='mogi_trajectory_server_filtered',
-        parameters=[{'trajectory_topic': 'trajectory_filtered'},
-                    {'odometry_topic': 'odometry/filtered'}]
+        parameters=[{'reference_frame_id': 'map'}]
     )
 
     ekf_node = Node(
@@ -240,7 +233,6 @@ def generate_launch_description():
     launchDescriptionObject.add_action(relay_camera_info_node)
     launchDescriptionObject.add_action(robot_state_publisher_node)
     launchDescriptionObject.add_action(trajectory_node)
-    launchDescriptionObject.add_action(trajectory_filtered_node)
     launchDescriptionObject.add_action(ekf_node)
     #launchDescriptionObject.add_action(interactive_marker_twist_server_node)
     #launchDescriptionObject.add_action(slam_toolbox_node)
