@@ -74,18 +74,6 @@ def generate_launch_description():
         'linear.yaml'
     )
 
-    slam_toolbox_params_path = os.path.join(
-        get_package_share_directory('bme_ros2_navigation'),
-        'config',
-        'slam_toolbox.yaml'
-    )
-
-    map_file = os.path.join(
-        get_package_share_directory('bme_ros2_navigation'),
-        'maps',
-        'map.txt'
-    )
-
     world_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             os.path.join(pkg_bme_ros2_navigation, 'launch', 'world.launch.py'),
@@ -202,19 +190,6 @@ def generate_launch_description():
         output='screen',
     )
 
-    # Slam Toolbox node
-    slam_toolbox_node = Node(
-            package='slam_toolbox',
-            executable='async_slam_toolbox_node',  # Use 'sync_slam_toolbox_node' for synchronous mode
-            name='slam_toolbox',
-            output='screen',
-            parameters=[{
-                'use_sim_time': LaunchConfiguration('use_sim_time'),
-                'map_file_name': "",
-                'slam_toolbox_params': slam_toolbox_params_path
-            }],
-    )
-
     launchDescriptionObject = LaunchDescription()
 
     #launchDescriptionObject.add_action(rviz_launch_arg)
@@ -235,6 +210,5 @@ def generate_launch_description():
     launchDescriptionObject.add_action(trajectory_node)
     launchDescriptionObject.add_action(ekf_node)
     #launchDescriptionObject.add_action(interactive_marker_twist_server_node)
-    #launchDescriptionObject.add_action(slam_toolbox_node)
 
     return launchDescriptionObject
