@@ -37,7 +37,6 @@ class WaypointFollower(Node):
         wp2.pose.orientation.w = q[3]
         waypoints.append(wp2)
 
-        # Add more waypoints as needed
         # Waypoint 3
         wp3 = PoseStamped()
         wp3.header.frame_id = 'map'
@@ -49,6 +48,8 @@ class WaypointFollower(Node):
         wp3.pose.orientation.z = q[2]
         wp3.pose.orientation.w = q[3]
         waypoints.append(wp3)
+
+        # Add more waypoints as needed
 
         return waypoints
 

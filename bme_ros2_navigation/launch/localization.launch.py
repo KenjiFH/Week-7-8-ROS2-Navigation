@@ -83,8 +83,6 @@ def generate_launch_description():
         }.items()
     )
 
-
-
     launchDescriptionObject = LaunchDescription()
 
     launchDescriptionObject.add_action(rviz_launch_arg)
