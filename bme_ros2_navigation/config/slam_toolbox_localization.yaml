@@ -20,9 +20,9 @@ slam_toolbox:
     # if you'd like to immediately start continuing a map at a given pose
     # or at the dock, but they are mutually exclusive, if pose is given
     # will use pose
-    #map_file_name: test_steve
+    map_file_name: /home/david/ros2_ws/src/ROS2-lessons/Week-7-8-ROS2-Navigation/bme_ros2_navigation/maps/serialized
     # map_start_pose: [0.0, 0.0, 0.0]
-    #map_start_at_dock: true
+    map_start_at_dock: true
 
     debug_logging: true
     throttle_scans: 1
