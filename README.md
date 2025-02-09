@@ -781,11 +781,9 @@ And when we are done with the waypoints we can start the navigation through them
 ![alt text][image20]
 ![alt text][image21]
 
-TODO: VIDEOOOO
+It's possible to run multiple loops through the waypoints and it's also possible to save and load the waypoints. One example is already in the `config` folder: `waypoints.yaml`. You can see a video about it here:
 
-It's possible to run multiple loops through the waypoints and it's also to save and load the waypoints. One example is already in the `config` folder: `waypoints.yaml`
-
-TODO: VIDEOOOO
+<a href="https://youtu.be/ED6AXnAR2sc"><img width="600" src="./assets/youtube-waypoints.png"></a> 
 
 It's also possible to follow waypoints through the nav2 navigation stack's API with a custom node. Let's create `follow_waypoints.py` in the `bme_ros2_navigation_py` package:
 
@@ -920,7 +918,7 @@ We can add more waypoints easily:
 ...
 ```
 
-TODO: VIDEOOOO
+<a href="https://youtu.be/3OhAyDFqBIs"><img width="600" src="./assets/youtube-waypoint-node.png"></a> 
 
 ## Navigation with SLAM
 
@@ -1058,7 +1056,7 @@ ros2 launch bme_ros2_navigation navigation_with_slam.launch.py
 
 ![alt text][image22]
 
-TODO: VIDEOOOO
+<a href="https://youtu.be/gZrYEP2ctfY"><img width="600" src="./assets/youtube-navigation-slam.png"></a> 
 
 # Exploration
 
@@ -1091,3 +1089,7 @@ The exploration node will identify the boundaries of the know surrounding and wi
 
 We can take a look on the `rqt_graph` of the simulation, but we'll see it's quite big! We can find the exploration node and we can see that it subscribes to the `/map` and to the action status and feedback of the navigation stack.
 ![alt text][image24]
+
+And finally here is a video about exploration:
+
+<a href="https://youtu.be/1jlpu-zfNac"><img width="600" src="./assets/youtube-exploration.png"></a> 
