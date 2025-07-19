@@ -40,7 +40,7 @@
     <visual name='base_link_visual'>
       <origin xyz="0 0 0" rpy=" 0 0 0"/>
       <geometry>
-        <mesh filename="package://bme_ros2_navigation/meshes/mogi_bot.dae" />
+        <mesh filename="package://bme_ros2_navigation/meshes/ATV.dae" />
       </geometry>
     </visual>
 
