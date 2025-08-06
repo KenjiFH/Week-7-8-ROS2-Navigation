@@ -75,6 +75,8 @@
   </link>
 
   <!-- STEP 2 - Wheels -->
+
+  <!--LEFT FRONT-->
   <joint type="continuous" name="left_wheel_joint">
     <origin xyz="0 0.15 0" rpy="0 0 0"/>
     <child link="left_wheel"/>
@@ -109,7 +111,9 @@
       </geometry>
     </visual>
   </link>
-
+  
+  
+  <!--RIGHT FRONT-->
   <joint type="continuous" name="right_wheel_joint">
     <origin xyz="0 -0.15 0" rpy="0 0 0"/>
     <child link="right_wheel"/>
@@ -144,6 +148,82 @@
       </geometry>
     </visual>
   </link>
+  
+  
+  <!--LEFT REAR-->
+  <joint type="continuous" name="left_rear_wheel_joint">
+  <origin xyz="-0.3 0.15 0" rpy="0 0 0"/> <!-- moved backwards along X axis -->
+  <child link="left_rear_wheel"/>
+  <parent link="base_link"/>
+  <axis xyz="0 1 0" rpy="0 0 0"/>
+  <limit effort="100" velocity="10"/>
+  <dynamics damping="1.0" friction="1.0"/>
+</joint>
+
+<link name='left_rear_wheel'>
+  <inertial>
+    <mass value="5.0"/>
+    <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+    <inertia
+        ixx="0.014" ixy="0" ixz="0"
+        iyy="0.014" iyz="0"
+        izz="0.025"
+    />
+  </inertial>
+
+  <collision>
+    <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+    <geometry>
+      <cylinder radius=".1" length=".05"/>
+    </geometry>
+  </collision>
+
+  <visual name='left_rear_wheel_visual'>
+    <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+    <geometry>
+      <mesh filename="package://bme_ros2_navigation/meshes/wheel.dae"/>
+    </geometry>
+  </visual>
+</link>
+
+
+<!--RIGHT REAR-->
+<joint type="continuous" name="right_rear_wheel_joint">
+  <origin xyz="-0.3 -0.15 0" rpy="0 0 0"/> <!-- moved back and mirrored on Y -->
+  <child link="right_rear_wheel"/>
+  <parent link="base_link"/>
+  <axis xyz="0 1 0" rpy="0 0 0"/>
+  <limit effort="100" velocity="10"/>
+  <dynamics damping="1.0" friction="1.0"/>
+</joint>
+
+<link name='right_rear_wheel'>
+  <inertial>
+    <mass value="5.0"/>
+    <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+    <inertia
+        ixx="0.014" ixy="0" ixz="0"
+        iyy="0.014" iyz="0"
+        izz="0.025"
+    />
+  </inertial>
+
+  <collision>
+    <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+    <geometry>
+      <cylinder radius=".1" length=".05"/>
+    </geometry>
+  </collision>
+
+  <visual name='right_rear_wheel_visual'>
+    <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
+    <geometry>
+      <mesh filename="package://bme_ros2_navigation/meshes/wheel.dae"/>
+    </geometry>
+  </visual>
+</link>
+
+
 
   <!-- STEP 4 - Gazebo frictions and colors -->
   <gazebo reference="left_wheel">
