@@ -101,6 +101,16 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        left_rear_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_rear_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
         scan_link:
           Alpha: 1
           Show Axes: false
@@ -138,6 +148,10 @@ Visualization Manager:
         odom:
           Value: true
         right_wheel:
+          Value: false
+        left_rear_wheel:
+          Value: false
+        right_rear_wheel:
           Value: false
         scan_link:
           Value: false

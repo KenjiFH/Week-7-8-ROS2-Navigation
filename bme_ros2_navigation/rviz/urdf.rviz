@@ -69,6 +69,16 @@ Visualization Manager:
           Show Axes: false
           Show Trail: false
           Value: true
+        left_rear_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
+        right_rear_wheel:
+          Alpha: 1
+          Show Axes: false
+          Show Trail: false
+          Value: true
       Mass Properties:
         Inertia: false
         Mass: false
@@ -92,6 +102,10 @@ Visualization Manager:
           Value: true
         right_wheel:
           Value: true
+        left_rear_wheel:
+          Value: true
+        right_rear_wheel:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
@@ -103,6 +117,10 @@ Visualization Manager:
             left_wheel:
               {}
             right_wheel:
+              {}
+            left_rear_wheel: 
+              {}
+            right_rear_wheel: 
               {}
       Update Interval: 0
       Value: true
