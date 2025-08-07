@@ -17,7 +17,7 @@
       <right_joint>right_rear_wheel_joint</right_joint>
 
       <!-- Parameters (adjust as needed) -->
-      <wheel_separation>0.3</wheel_separation>        <!-- Distance between left and right wheels -->
+      <wheel_separation>0.6</wheel_separation>        <!-- Distance between left and right wheels -->
       <wheel_radius>0.1</wheel_radius>                <!-- Radius of your wheels -->
 
       <max_velocity>3.0</max_velocity>
