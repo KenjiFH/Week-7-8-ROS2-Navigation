@@ -107,7 +107,7 @@
     <visual name='left_wheel_visual'>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
       <geometry>
-        <mesh filename = "package://bme_ros2_navigation/meshes/wheel.dae" scale ="1.5 1.5 1.5"/>
+        <mesh filename = "package://bme_ros2_navigation/meshes/wheel.dae" scale ="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -144,7 +144,7 @@
     <visual name='right_wheel_visual'>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
       <geometry>
-        <mesh filename = "package://bme_ros2_navigation/meshes/wheel.dae" scale ="1.5 1.5 1.5"/>
+        <mesh filename = "package://bme_ros2_navigation/meshes/wheel.dae" scale ="1 1 1"/>
       </geometry>
     </visual>
   </link>
@@ -181,7 +181,7 @@
   <visual name='left_rear_wheel_visual'>
     <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
     <geometry>
-      <mesh filename="package://bme_ros2_navigation/meshes/wheel.dae" scale ="1.5 1.5 1.5"/>
+      <mesh filename="package://bme_ros2_navigation/meshes/wheel.dae" scale ="1 1 1"/>
     </geometry>
   </visual>
 </link>
@@ -218,7 +218,7 @@
   <visual name='right_rear_wheel_visual'>
     <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
     <geometry>
-      <mesh filename="package://bme_ros2_navigation/meshes/wheel.dae" scale ="1.5 1.5 1.5"/>
+      <mesh filename="package://bme_ros2_navigation/meshes/wheel.dae" scale ="1 1 1"/>
     </geometry>
   </visual>
 </link>
